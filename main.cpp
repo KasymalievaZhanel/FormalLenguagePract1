@@ -70,13 +70,13 @@ bool Result(datainput &data) {
 
 
 void PushLetterOr1(std::stack<vector<bool>> &reg_st, char symb, datainput &input) {
-    vector<bool> for_each_reg_symbol(input.amount + 1, false);//k+1
+    vector<bool> expr(input.amount + 1, false);//k+1
     if (symb == input.symbol) {
-        for_each_reg_symbol[1] = true;
+        expr[1] = true;
     } else {
-        for_each_reg_symbol[0] = true;
+        expr[0] = true;
     }
-    reg_st.push(for_each_reg_symbol);
+    reg_st.push(expr);
 }
 
 
