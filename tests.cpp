@@ -17,10 +17,10 @@ TEST(UsefulFunctionsTest, IsLetterOr1Test) {
     EXPECT_EQ(IsLetter('b'), true);
     EXPECT_EQ(IsLetter('c'), true);
     for (int i = 1; 'c' + i <= 'z'; ++i) {
-        EXPECT_EQ(isLetter('c' + i), false);
+        EXPECT_EQ(IsLetterOr1('c' + i), false);
     }
     for (int i = 0; 'A' + i <= 'Z'; ++i) {
-        EXPECT_EQ(isLetter('A' + i), false);
+        EXPECT_EQ(IsLetterOr1('A' + i), false);
     }
 }
 
@@ -31,10 +31,10 @@ TEST(UsefulFunctionsTest, getTopTwiceTest) {
     std::vector<bool> v2 = {false, false};
     std::vector<bool> v3 = {true, true};
     st.push(v1);
-    EXPECT_ANY_THROW(getTopTwice(st));
+    EXPECT_ANY_THROW(GetTopTwice(st));
     st.push(v2);
     st.push(v3);
-    auto res = getTopTwice(st);
+    auto res = GetTopTwice(st);
     std::pair<std::vector<bool>, std::vector<bool>> predicted_res = {v3, v2};
     EXPECT_EQ(res, predicted_res);
 }
