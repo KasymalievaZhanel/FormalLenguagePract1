@@ -7,9 +7,9 @@ TEST(ClassinputTest, IsValidTest) {
     datainput data2("bbc+a*..*", 'c', 22);
     datainput data3("cabc.+.*", 'k', 22);
 
-    EXPECT_EQ(data1.isValid(), false);
-    EXPECT_EQ(data2.isValid(), true);
-    EXPECT_EQ(data3.isValid(), false);
+    EXPECT_EQ(data1.IsValid(), false);
+    EXPECT_EQ(data2.IsValid(), true);
+    EXPECT_EQ(data3.IsValid(), false);
 }
 
 TEST(UsefulFunctionsTest, IsLetterOr1Test) {
