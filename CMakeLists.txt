@@ -9,7 +9,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIR})
 
 add_executable(CTests main_tests.cpp tests.cpp headers.h sol.cpp )
-target_link_libraries(CTests Threads::Threads ${GTEST_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
+target_link_libraries(CTests Threads::Threads ${GTEST_LIBRARIES})
 
 add_executable(Main main.cpp headers.h sol.cpp)
 target_link_libraries(Main)
