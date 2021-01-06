@@ -2,10 +2,10 @@
 #include <headers.h>
 #include <vector>
 
-TEST(ClassInputTest, IsValidTest) {
-    input data1("abcda*..*", 'c', 22);
-    input data2("bbc+a*..*", 'c', 22);
-    input data3("cabc.+.*", 'k', 22);
+TEST(ClassinputTest, IsValidTest) {
+    datainput data1("abcda*..*", 'c', 22);
+    datainput data2("bbc+a*..*", 'c', 22);
+    datainput data3("cabc.+.*", 'k', 22);
 
     EXPECT_EQ(data1.isValid(), false);
     EXPECT_EQ(data2.isValid(), true);
@@ -105,7 +105,7 @@ TEST(ExprTest, IterTest) {
 
 TEST(RegTest, PushLetterOr1Test) {
     std::stack<std::vector<bool>> result_reg_stack;
-    input data("ababa", 'a', 3);
+    datainput data("ababa", 'a', 3);
     push_letter(result_reg_stack, 'a', data);
     EXPECT_EQ(result_reg_stack.size(), 1);
     EXPECT_EQ(result_reg_stack.top().size(), 4);
@@ -182,21 +182,21 @@ TEST(RegTest, IterTest) {
 
 
 TEST(AlgoTest, TaskTest) {
-    input data("ab+c.aba.∗.bac.+.+∗", 'a', 2);
+    datainput data("ab+c.aba.∗.bac.+.+∗", 'a', 2);
     EXPECT_EQ(getAnswer(data), true);
-    input data1("ab.a+c.a.", 'a', 2);
+    datainput data1("ab.a+c.a.", 'a', 2);
     EXPECT_EQ(getAnswer(data1), true);
     data1.symbCount = 1;
     EXPECT_EQ(getAnswer(data1), false);
     data1.symbCount = 3;
     EXPECT_EQ(getAnswer(data1), false);
-    input data2("ab.a+c.a.*a.b.a+", 'a', 1);
+    datainput data2("ab.a+c.a.*a.b.a+", 'a', 1);
     EXPECT_EQ(getAnswer(data2), true);
     data2.symbCount = 2;
     EXPECT_EQ(getAnswer(data2), false);
     data2.symbCount = 115;
     EXPECT_EQ(getAnswer(data2), true);
-    input data3("aab.*c+a.*ab.+.c.", 'a', 2);
+    datainput data3("aab.*c+a.*ab.+.c.", 'a', 2);
     EXPECT_EQ(getAnswer(data3), true);
     data3.symbCount = 161;
     EXPECT_EQ(getAnswer(data3), true);
